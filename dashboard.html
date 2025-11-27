@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post-it Parrot Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="top-nav container">
+    <div class="logo-container">
+      <img src="parrot48.png" alt="Post-it Parrot" class="logo-icon">
+      <h1>Post-it Parrot</h1>
+    </div>
+    <div class="search-container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="search-input" placeholder="Search bookmarks by title or content...">
+    </div>
+    <div class="filters-container">
+      <div class="dropdown-wrapper">
+        <select id="source-filter-top" class="dropdown-select">
+          <option value="all">All Sources</option>
+          <option value="YouTube">YouTube</option>
+          <option value="Twitter">Twitter</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Article">Articles</option>
+        </select>
+        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+      <div class="dropdown-wrapper">
+        <select id="topic-filter-top" class="dropdown-select">
+          <option value="all">All Topics</option>
+          <option value="AI/ML">AI/ML</option>
+          <option value="Health">Health</option>
+          <option value="Prototyping">Prototyping</option>
+          <option value="Product Strategy">Product Strategy</option>
+          <option value="News">News</option>
+          <option value="Prompt">Prompt</option>
+          <option value="Other">Other</option>
+        </select>
+        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+    <div class="stats" id="bookmark-count">0 Bookmarks</div>
+  </header>
+
+  <main class="container main-content" id="bookmarks-grid">
+    <!-- Categories and cards will be injected here dynamically -->
+  </main>
+
+  <div class="no-results" id="no-results" style="display: none;">
+    <img src="parrot48.png" alt="No results" class="no-results-icon">
+    <p>No bookmarks found matching your criteria.</p>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

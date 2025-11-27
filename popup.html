@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Post-it Parrot</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-container">
+        <h1>Post-it Parrot</h1>
+      </div>
+      <div class="header-actions">
+        <a href="dashboard.html" target="_blank" class="dashboard-link" title="Open Dashboard">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </a>
+        <button id="bookmark-current" class="primary-btn">Bookmark Current Page</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="search-input" placeholder="Search bookmarks...">
+      <div class="filters">
+        <select id="source-filter">
+          <option value="all">All Sources</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Twitter">Twitter</option>
+          <option value="YouTube">YouTube</option>
+          <option value="Article">Articles</option>
+        </select>
+        <select id="topic-filter">
+          <option value="all">All Topics</option>
+          <option value="Prototyping">Prototyping</option>
+          <option value="AI/ML">AI/ML</option>
+          <option value="Product Strategy">Product Strategy</option>
+          <option value="Health">Health</option>
+          <option value="News">News</option>
+          <option value="Prompt">Prompt</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="bookmark-list" class="bookmark-list">
+      <!-- Bookmarks will be inserted here -->
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

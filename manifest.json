@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Post-it Parrot",
+  "version": "1.0",
+  "description": "Easily bookmark and organize LinkedIn, Twitter, and articles.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "contextMenus",
+    "webNavigation"
+  ],
+  "icons": {
+    "16": "parrot16.png",
+    "48": "parrot48.png",
+    "128": "parrot128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "parrot16.png",
+      "48": "parrot48.png",
+      "128": "parrot128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
