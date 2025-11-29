@@ -66,7 +66,31 @@
           }
         }
       } else {
-        content = document.body.innerText.substring(0, 500);
+        // Fallback for LinkedIn when no specific post is found
+        if (url.includes("/notifications")) {
+          title = "LinkedIn Notifications";
+          content = "Your LinkedIn notifications and updates.";
+        } else if (url.includes("/messaging")) {
+          title = "LinkedIn Messages";
+          content = "Your LinkedIn direct messages.";
+        } else if (url.includes("/jobs")) {
+          title = "LinkedIn Jobs";
+          content = "LinkedIn job opportunities and applications.";
+        } else if (url.includes("/mynetwork")) {
+          title = "LinkedIn Network";
+          content = "Your LinkedIn professional network and connections.";
+        } else {
+          // General fallback, but avoid "0 notifications"
+          title = document.title;
+          content = "LinkedIn page - " + title;
+          const mainContent = document.querySelector('main');
+          if (mainContent) {
+            const text = mainContent.innerText.substring(0, 200).trim();
+            if (text && !text.includes("0 notifications")) {
+              content = text + "...";
+            }
+          }
+        }
       }
     } else if (url.includes("twitter.com") || url.includes("x.com")) {
       source = "Twitter";
